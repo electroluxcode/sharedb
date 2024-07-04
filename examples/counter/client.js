@@ -19,6 +19,7 @@ doc.subscribe(showNumbers);
 doc.on('op', showNumbers);
 
 function showNumbers() {
+  console.log(doc)
   document.querySelector('#num-clicks').textContent = doc.data.numClicks;
 };
 
@@ -26,6 +27,7 @@ function showNumbers() {
 // document and sync the change to the server and other connected
 // clients
 function increment() {
+  // console.log(doc)
   // Increment `doc.data.numClicks`. See
   // https://github.com/ottypes/json0 for list of valid operations.
   doc.submitOp([{p: ['numClicks'], na: 1}]);
